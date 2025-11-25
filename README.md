@@ -20,5 +20,6 @@ ECE 3GH
 | | GND | GND | Ground |
 | | IRQ | (Not Connected)| |
 | | | | |
-| **Buzzer** | Positive (+) | GPIO 15 |  |
+| **Buzzer** | Signal(I/O) | GPIO 15 |  |
 | | Negative (-) | GND | Ground |
+| | Positive (+) | 3.3V | Positive |
