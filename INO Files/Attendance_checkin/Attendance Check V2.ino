@@ -4,13 +4,16 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <WiFiClientSecure.h>
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> // Include the LCD Library
 
+// --- NEW PIN DEFINITIONS ---
+// We moved these to free up 21 and 22 for the LCD
 #define RST_PIN 4  
 #define SS_PIN 5   
 #define BUZZER 15
 
 // --- LCD SETUP ---
+// 0x27 is the common address. If it doesn't work, try 0x3F
 int lcdColumns = 16;
 int lcdRows = 2;
 LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows);  
@@ -24,7 +27,7 @@ byte bufferLen = 18;
 byte readBlockData[18];
 
 String card_holder_name;
-const String sheet_url = "https://script.google.com/macros/s/AKfycbxudk3Iuj5YNyRWNevvET0pezGlr0sKWQcDKJkFJ-bA5sjZQCg2_9MRuLTIKhuA3km9uA/exec?name=";
+const String sheet_url = "https://script.google.com/macros/s/AKfycbwupqyI6coqIsGY9jfU4_zfTNOCXoCH7K0mbKNxbWrysAIyORJn2ss4Y1EZhHFagyackw/exec?name=";
 
 #define WIFI_SSID "ECE3GH"
 #define WIFI_PASSWORD "12345678"
@@ -154,7 +157,7 @@ void loop() {
         delay(200);
       }
       https.end();
-      delay(2000); // Wait so user can read the message
+      delay(1500); // Wait so user can read the message
     } else {
       Serial.printf("[HTTPS] Unable to connect\n");
       lcd.clear();
