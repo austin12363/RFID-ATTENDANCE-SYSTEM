@@ -1,7 +1,6 @@
-
 var ss = SpreadsheetApp.openById('14j74_Fwd390ABO2-0Qv8NZJrBfDW4RK-4YnpTN46PhQ');
 var sheet = ss.getSheetByName('Sheet1');
-var timezone = "asia/Manila";
+var timezone = "Asia/Manila";
 
 
 function doGet(e){
