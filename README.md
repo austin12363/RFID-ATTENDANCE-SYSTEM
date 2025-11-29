@@ -3,6 +3,7 @@ ECE 3GH
 
 
 ### Component Connection Table
+## For Attendance Checking Code Only
 
 | Component | Component Pin | ESP32 Pin | Function / Note |
 | :--- | :--- | :--- | :--- |
